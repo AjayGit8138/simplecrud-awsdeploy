@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - mongodb+srv://prasathmajay_db_user:k27xYAOy8wW773nS@cluster0.djesdhl.mongodb.net/crudapp
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+  

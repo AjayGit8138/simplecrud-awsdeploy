@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Items CRUD</h1>
+
+  <!-- Add Item Form -->
+  <div class="form-group">
+    <h2>Add New Item</h2>
+    <input type="text" [(ngModel)]="newItem.name" placeholder="Name" class="form-control">
+    <input type="text" [(ngModel)]="newItem.description" placeholder="Description" class="form-control">
+    <button (click)="addItem()" class="btn btn-primary">Add Item</button>
+  </div>
+
+  <!-- Items List -->
+  <div class="items-list">
+    <h2>Items</h2>
+    <ul class="list-group">
+      <li *ngFor="let item of items" class="list-group-item">
+        <div *ngIf="editingItem?._id !== item._id">
+          <strong>{{ item.name }}</strong>: {{ item.description }}
+          <button (click)="editItem(item)" class="btn btn-secondary btn-sm">Edit</button>
+          <button (click)="deleteItem(item._id!)" class="btn btn-danger btn-sm">Delete</button>
+        </div>
+        <div *ngIf="editingItem?._id === item._id">
+          <input type="text" [(ngModel)]="editingItem!.name" class="form-control">
+          <input type="text" [(ngModel)]="editingItem!.description" class="form-control">
+          <button (click)="updateItem()" class="btn btn-success btn-sm">Update</button>
+          <button (click)="cancelEdit()" class="btn btn-warning btn-sm">Cancel</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
