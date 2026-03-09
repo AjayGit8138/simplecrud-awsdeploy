@@ -6,7 +6,7 @@ pipeline {
 
   stage('Clone Repository') {
    steps {
-    git 'https://github.com/yourusername/simplecrud-awsdeploy.git'
+    git 'https://github.com/AjayGit8138/simplecrud-awsdeploy.git'
    }
   }
 
