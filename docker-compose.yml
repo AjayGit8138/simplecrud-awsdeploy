@@ -6,7 +6,10 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - mongodb+srv://prasathmajay_db_user:k27xYAOy8wW773nS@cluster0.djesdhl.mongodb.net/crudapp
+      - MONGO_USERNAME=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASS}  
+      - MONGO_CLUSTER=${MONGO_CLUSTER}
+      - MONGO_DB=${MONGO_DB}
   frontend:
     build: ./frontend
     ports:
